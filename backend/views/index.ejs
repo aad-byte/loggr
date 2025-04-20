@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loggr</title>
+</head>
+<body>
+  <h1>Welcome,</h1>  
+  <h1> <%= username %> </h1>
+
+  <% let today = new Date(); 
+  const day = today.getDate();
+  const month = today.getMonth() + 1;
+  const year = today.getFullYear();
+  %>
+
+  <nav>
+    <a href="/">Welcome!</a>
+    <a href="/day/<%= year %>/<%= month %>/<%= day %>">day</a>
+  </nav>
+</body>
+</html>
+
+<!--add nav bar for the  two other pages-->
