@@ -1,5 +1,5 @@
 const express = require('express');
-const {createTask, getTask, updateTask, deleteTask} = require('../controllers/taskControler')
+const {createTask, getTask, updateTask, deleteTask, getCalendar} = require('../controllers/taskControler')
 const Task = require('../models/taskmodel')
 
 const router = express.Router();
@@ -10,9 +10,7 @@ router.get('/', (req, res) => {
 })
 
 
-router.get('/loggr', (req, res) => {
-    res.json({mssg: 'loggr calendar here'})
-})
+router.get('/loggr', getCalendar)
 
 router.post('/day', createTask)
 
@@ -27,6 +25,8 @@ router.get('/bleh', async (req,res) => {
     const tasks = await Task.find({});
     res.json(tasks);
 })
+
+
 
 
 module.exports = router

@@ -62,9 +62,14 @@ const deleteTask = async (req, res) => {
     }
 }
 
+const getCalendar = async (req, res) => {
+    res.status(200).render('calendar')
+}
+
 module.exports = {
     createTask,
     getTask,
     updateTask,
-    deleteTask
+    deleteTask,
+    getCalendar
 }
